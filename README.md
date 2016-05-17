@@ -9,7 +9,7 @@ Four basic matrix factorization methods implemented by Python.
 
 # Requirement
 - python 2.7+
-- ![wx](http://www.wxpython.org/)	
+- [wxPython](http://www.wxpython.org/)	
 
 # Quick Start(for OS X/Linux)
 - download
@@ -47,7 +47,7 @@ double click MatrixFactorization.exe
 - select a method to do the fractorization by click the corresponding button 
 
 # Bug Report
-[Accagain(chenmaosen0@gmail.com)]
+chenmaosen0@gmail.com
 
 
 
