@@ -5,7 +5,7 @@ Four basic matrix factorization methods implemented by Python.
 - Householder reduction Orthogonal Reduction
 - Givens reduction Orthogonal Reduction
 
-<img src="https://raw.githubusercontent.com/Accagain2014/MatrixFactorization/master/image/show.png" width = "300" height = "200" alt="" align=center />
+<img src="https://raw.githubusercontent.com/Accagain2014/MatrixFactorization/master/image/show.png" width = "600" height = "800" alt="" align=center />
 
 # Requirement
 - python 2.7+
