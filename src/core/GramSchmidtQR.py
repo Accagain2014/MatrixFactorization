@@ -40,7 +40,7 @@ class GramSchmidtQR(mf):
 
 
 	def show(self):
-		content = '\n'+super(GramSchmidtQR, self).show()+'\n\n'
+		content = '\n'+super(GramSchmidtQR, self).show('GramSchmidtQR')+'\n\n'
 		content += 'Q:'
 		content += Tools.outputAMatrix(self.Q)
 		content += '\nR:'

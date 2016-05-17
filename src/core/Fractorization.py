@@ -16,8 +16,8 @@ class MatrixFractorization(object):
 		#print 'Begin to do matrix fractorization ...'
 		pass
 
-	def show(self):
-		return 'Show the matrix fractorization result ...'
+	def show(self, method='matrix fractorization'):
+		return 'Show ' + method + ' result ...'
 
 	def check(self):
 		return self.state

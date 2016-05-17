@@ -49,7 +49,7 @@ class  App(wx.App):
 		introduceContent += "Please input 2 integers with respect to matrix's size(rows and columns) separates by one space or tab in the first row."
 		introduceContent += " Then input the matrix one row one line, separate by one space or tab."
 		introduceContent += " For example:\n"
-		introduceContent += '3\t3\n1\t19\t-34\n-2\t-5\t20\n2\t8\t37\n'
+		introduceContent += '4\t4\n1\t2\t-3\t4\n4\t8\t12\t-8\n2\t3\t2\t1\n-3\t-1\t1\t-4\n'
 		introduceContent += "**"*48 + '\n'
 
 		self.textCtrl.AppendText(introduceContent)

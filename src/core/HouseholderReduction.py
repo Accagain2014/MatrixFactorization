@@ -40,7 +40,7 @@ class HouseholderReduction(mf):
 		self.Q = Tools.matrixTranspose(self.Q)
 
 	def show(self):
-		content = '\n'+super(HouseholderReduction, self).show()+'\n\n'
+		content = '\n'+super(HouseholderReduction, self).show('HouseholderReduction')+'\n\n'
 		content += 'Q:'
 		content += Tools.outputAMatrix(self.Q)
 		content += '\nR:'

@@ -67,7 +67,7 @@ class PLUFractorization(mf):
 		#print 'Matrix fractorization is done successfully ...'
 
 	def show(self):
-		content = '\n'+super(PLUFractorization, self).show()+'\n\n'
+		content = '\n'+super(PLUFractorization, self).show('PLUFractorization')+'\n\n'
 		content += 'P:'
 		content += Tools.outputAMatrix(self.P)
 		content += '\nL:'

@@ -30,7 +30,7 @@ class GivensReduction(mf):
 		self.Q = Tools.matrixTranspose(self.Q)
 
 	def show(self):
-		content = '\n'+super(GivensReduction, self).show()+'\n\n'
+		content = '\n'+super(GivensReduction, self).show('GivensReduction')+'\n\n'
 		content += 'Q:'
 		content += Tools.outputAMatrix(self.Q)
 		content += '\nR:'
