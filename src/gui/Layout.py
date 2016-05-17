@@ -17,8 +17,7 @@ class  App(wx.App):
 	"""docstring for  App"""
 	def OnInit(self):
 		self.Frame = Frame()
-		self.bkg = wx.Panel(self.Frame)
-		self.Frame.Show()
+		#self.bkg = wx.Panel(self.Frame)
 		return True
 
 	def layout(self):
@@ -39,6 +38,8 @@ class  App(wx.App):
 		self.Frame.Bind(wx.EVT_BUTTON, self.gsqrCalculation, self.gsqrButton)
 		self.Frame.Bind(wx.EVT_BUTTON, self.hhrCalculation, self.hhrButton)
 		self.Frame.Bind(wx.EVT_BUTTON, self.girCalculation, self.girButton)
+
+		self.Frame.Show()
 
 	def clearText(self, event):
 		self.textCtrl.Clear()
