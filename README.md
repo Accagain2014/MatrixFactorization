@@ -9,7 +9,7 @@ Four basic matrix factorization methods implemented by Python.
 
 # Requirement
 - python 2.7+
-- wx	
+- ![wx](http://www.wxpython.org/)	
 
 # Quick Start(for OS X/Linux)
 - download
