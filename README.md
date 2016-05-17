@@ -5,7 +5,8 @@ Four basic matrix factorization methods implemented by Python.
 - Householder reduction Orthogonal Reduction
 - Givens reduction Orthogonal Reduction
 
-![](https://raw.githubusercontent.com/Accagain2014/MatrixFactorization/master/image/show.png =100x20)
+<img src="https://raw.githubusercontent.com/Accagain2014/MatrixFactorization/master/image/show.png" width = "300" height = "200" alt="" align=center />
+
 # Requirement
 - python 2.7+
 - wx	
@@ -34,11 +35,16 @@ cd ./src
 python MatrixFactorization.py
 ```
 
-- run by source file
+- run by binary file
 ```python
 cd ./bin
 double click MatrixFactorization.exe
+```
 
+# Operation Description 
+- click 'Input' button
+- input the matrix
+- select a method to do the fractorization by click the corresponding button 
 
 # Bug Report
 [Accagain(chenmaosen0@gmail.com)]
