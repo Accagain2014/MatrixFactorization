@@ -10,7 +10,7 @@ from core import GivensReduction as gir
 class Frame(wx.Frame):
 	"""docstring for Frame"""
 	def __init__(self, parent=None, title='Matrix Fractorization', size=(500, 700)):
-		super(Frame, self).__init__(parent, title=title, size=size)
+		super(Frame, self).__init__(parent, title=title, size=size, style=wx.DEFAULT_FRAME_STYLE ^ (wx.RESIZE_BORDER | wx.MINIMIZE_BOX |wx.MAXIMIZE_BOX))
 
 
 class  App(wx.App):
