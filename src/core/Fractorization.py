@@ -11,6 +11,7 @@ class MatrixFractorization(object):
 		self.m = len(self.A)
 		self.n = len(self.A[0])
 		self.state = True
+		self.errorMessage = ''
 
 	def fractorization(self):
 		#print 'Begin to do matrix fractorization ...'

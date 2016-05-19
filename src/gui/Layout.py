@@ -18,6 +18,7 @@ class  App(wx.App):
 	def OnInit(self):
 		self.Frame = Frame()
 		#self.bkg = wx.Panel(self.Frame)
+		self.inputState = True
 		return True
 
 	def layout(self):
@@ -57,34 +58,63 @@ class  App(wx.App):
 		self.introduceLineNum = self.textCtrl.GetNumberOfLines()-1
 
 	def getMatrix(self):
-		aLine = self.textCtrl.GetLineText(self.introduceLineNum).strip()
-		aLine = map(lambda x: x.strip(), aLine.split())
-		aLine = map(int, aLine)
-		n = aLine[1]
-		m = aLine[0]
-
-		A = []
-
-		for i in range(m):
-			aLine = self.textCtrl.GetLineText(self.introduceLineNum+i+1).strip()
-			if(aLine == ""):
+		try:
+			if not hasattr(self, 'introduceLineNum'):
 				self.inputState = False
+				return 
+
+			aLine = self.textCtrl.GetLineText(self.introduceLineNum).strip()
 			aLine = map(lambda x: x.strip(), aLine.split())
-			aLine = map(float, aLine)
-			if(len(aLine) != n):
-				self.inputState = False
-			A.append(aLine)
-		#print A
-		return A
+			aLine = map(int, aLine)
+			n = aLine[1]
+			m = aLine[0]
+
+			A = []
+
+			for i in range(m):
+				aLine = self.textCtrl.GetLineText(self.introduceLineNum+i+1).strip()
+				if(aLine == ""):
+					self.inputState = False
+				aLine = map(lambda x: x.strip(), aLine.split())
+				aLine = map(float, aLine)
+				if(len(aLine) != n):
+					self.inputState = False
+				A.append(aLine)
+			return A
+		except Exception, e:
+			self.inputState = False
+			return 
+		
+
+	def raiseDialog(self, message):
+		dlg = wx.MessageDialog(None, message, caption='Excute error!', style=wx.ICON_ERROR|wx.OK)
+		dlg.ShowModal()
+		#self.clearText('')
+		#self.inputMatrix('')
+		self.textCtrl.SetEditable(True)
+		dlg.Destroy()
+
+	def checkInput(self):
+		if not self.inputState:
+			self.raiseDialog('Matrix input error, please input again!')
+			self.inputState = True
+			return False
+		return True
 
 	def calculation(self):
 		self.oneFractor.fractorization()
+		if not self.oneFractor.state:
+			self.raiseDialog(self.oneFractor.errorMessage)
+			return 
 		resultContent = self.oneFractor.show()
 		self.textCtrl.AppendText(resultContent)
 
 	def pluCalculation(self, event):
 		self.textCtrl.SetEditable(False)
-		A = self.getMatrix() 
+		A = self.getMatrix()
+		if not self.checkInput():
+			return
+
 		self.oneFractor = plu.PLUFractorization(A)
 		self.calculation()
 	
@@ -92,6 +122,8 @@ class  App(wx.App):
 	def gsqrCalculation(self, event):
 		self.textCtrl.SetEditable(False)
 		A = self.getMatrix() 
+		if not self.checkInput():
+			return
 
 		self.oneFractor = gsqr.GramSchmidtQR(A)
 		self.calculation()
@@ -99,6 +131,8 @@ class  App(wx.App):
 	def hhrCalculation(self, event):
 		self.textCtrl.SetEditable(False)
 		A = self.getMatrix() 
+		if not self.checkInput():
+			return
 
 		self.oneFractor = hhr.HouseholderReduction(A)
 		self.calculation()
@@ -106,6 +140,8 @@ class  App(wx.App):
 	def girCalculation(self, event):
 		self.textCtrl.SetEditable(False)
 		A = self.getMatrix() 
+		if not self.checkInput():
+			return
 
 		self.oneFractor = gir.GivensReduction(A)
 		self.calculation()
